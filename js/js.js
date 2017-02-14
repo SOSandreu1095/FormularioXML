@@ -135,6 +135,7 @@ function ponerDatosRadio(tituloRadio, IDposicion, opciones, divID) {
         input.name = "rad";
         radioContainer.appendChild(input);
         radioContainer.appendChild(label);
+        radioContainer.appendChild(document.createElement("br"));
     }
 
 }
@@ -159,6 +160,7 @@ function ponerDatosCheckbox(tituloCheckbox, IDposicion, opciones, divID) {
         /*input.id = "color_" + i;*/
         checkBoxContainer.appendChild(input);
         checkBoxContainer.appendChild(label);
+        checkBoxContainer.appendChild(document.createElement("br"));
     }
 }
 
