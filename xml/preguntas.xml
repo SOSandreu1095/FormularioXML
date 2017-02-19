@@ -37,7 +37,7 @@
 
     <question id="jklm_004">
 		<type>text</type>
-		<title>4.- Pacman tiene 4 enemigos y esos enemigos son unos:</title>
+		<title>4.- Pacman tiene 4 enemigos y esos enemigos son unos....</title>
 		<answer>fantasmas</answer>
 	</question>
     <!-- Los 4 fantasmas que intentan matarlo -->
