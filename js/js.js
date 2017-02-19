@@ -1,3 +1,18 @@
+//VARIABLES
+//2 Radio, 2 Text, 2 Checkbox, 2 Select, 2 Mulltiple
+
+var answRadio1; //Fet
+var answRadio2; //Fet
+var answText1; //Fet
+var answText2; //Fet
+var answCheck1 = [];
+var answCheck2 = [];
+var answSelect1; //Fet
+var answSelect2; //Fet
+var answMult1 = [];
+var answMult2 = [];
+
+
 
 
 window.onload = function () {
@@ -18,6 +33,7 @@ function gestionarXml(dadesXml) {
     var xmlDoc = dadesXml.responseXML;
 
 
+
     //RADIO ------------------------------------------------------------
     var tituloRadio = xmlDoc.getElementsByTagName("title")[0].innerHTML;
     var opcionesRadio = [];
@@ -26,6 +42,7 @@ function gestionarXml(dadesXml) {
         opcionesRadio[i] = xmlDoc.getElementById("jklm_001").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosRadio(tituloRadio, "q1", opcionesRadio, "radioDiv1");
+    answRadio1 = xmlDoc.getElementById("jklm_001").getElementsByTagName('answer')[0].innerHTML;
 
     //-------------------------------------------
 
@@ -36,14 +53,28 @@ function gestionarXml(dadesXml) {
         opcionesRadio[i] = xmlDoc.getElementById("jklm_002").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosRadio(tituloRadio, "q2", opcionesRadio, "radioDiv2");
+    answRadio2 = xmlDoc.getElementById("jklm_002").getElementsByTagName('answer')[0].innerHTML;
+
+
+
+
+
 
 
     //TEXT --------------------------------------------------------------
     var tituloText = xmlDoc.getElementsByTagName("title")[2].innerHTML;
     ponerDatosText(tituloText, "q3");
+    answText1 = xmlDoc.getElementById("jklm_003").getElementsByTagName('answer')[0].innerHTML;
 
     tituloText = xmlDoc.getElementsByTagName("title")[3].innerHTML;
     ponerDatosText(tituloText, "q4");
+    answText2 = xmlDoc.getElementById("jklm_004").getElementsByTagName('answer')[0].innerHTML;
+
+
+
+
+
+
 
     //CHECKBOX ----------------------------------------------------------
     var tituloCheckbox = xmlDoc.getElementsByTagName("title")[4].innerHTML;
@@ -53,6 +84,12 @@ function gestionarXml(dadesXml) {
         opcionesCheckbox[i] = xmlDoc.getElementById("jklm_005").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosCheckbox(tituloCheckbox, "q5", opcionesCheckbox, "checkBoxDiv1");
+
+    var nres = xmlDoc.getElementById("jklm_005").getElementsByTagName('answer').length;
+    for (i = 0; i < nres; i++) {
+        answCheck1[i] = xmlDoc.getElementById("jklm_005").getElementsByTagName('answer')[i].innerHTML;
+    }
+    alert(answCheck1);
 
     //---------------------------------------------------------
 
@@ -64,6 +101,11 @@ function gestionarXml(dadesXml) {
     }
     ponerDatosCheckbox(tituloCheckbox, "q6", opcionesCheckbox, "checkBoxDiv2");
 
+    var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
+    for (i = 0; i < nres; i++) {
+        answCheck2[i] = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer')[i].innerHTML;
+    }
+    alert(answCheck2);
 
 
     //SELECT ------------------------------------------------------------
@@ -75,6 +117,7 @@ function gestionarXml(dadesXml) {
         opcionesSelect[i] = xmlDoc.getElementById("jklm_007").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosSelect(tituloSelect, "q7", opcionesSelect, 0);
+    answSelect1 = xmlDoc.getElementById("jklm_007").getElementsByTagName('answer')[0].innerHTML;
 
     //-------------------------------------------------------------------------------------
 
@@ -86,8 +129,7 @@ function gestionarXml(dadesXml) {
         opcionesSelect[i] = xmlDoc.getElementById("jklm_008").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosSelect(tituloSelect, "q8", opcionesSelect, 1);
-
-
+    answSelect2 = xmlDoc.getElementById("jklm_008").getElementsByTagName('answer')[0].innerHTML;
 
     //MULTIPLE ----------------------------------------------------------
     var tituloMultiple = xmlDoc.getElementsByTagName("title")[8].innerHTML;
@@ -132,7 +174,7 @@ function ponerDatosRadio(tituloRadio, IDposicion, opciones, divID) {
         var label = document.createElement("label");
         label.innerHTML = opciones[i];
         input.type = "radio";
-        input.name = "rad";
+        input.name = "rad" + divID;
         radioContainer.appendChild(input);
         radioContainer.appendChild(label);
         radioContainer.appendChild(document.createElement("br"));
@@ -154,10 +196,10 @@ function ponerDatosCheckbox(tituloCheckbox, IDposicion, opciones, divID) {
         var input = document.createElement("input");
         var label = document.createElement("label");
         label.innerHTML = opciones[i];
-        /*label.setAttribute("for", "color_" + i);*/
+        label.setAttribute("for", "check_" + i);
         input.type = "checkbox";
         input.name = "check";
-        /*input.id = "color_" + i;*/
+        input.id = "check_" + i;
         checkBoxContainer.appendChild(input);
         checkBoxContainer.appendChild(label);
         checkBoxContainer.appendChild(document.createElement("br"));

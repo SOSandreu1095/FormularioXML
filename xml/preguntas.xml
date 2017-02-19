@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<!DOCTYPE questions>-->
+
+<!-- Preguntas sobre videojuegos -->
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
+
+   	<question id="jklm_001">
+		<type>radio</type>
+		<title>1.- ¿Dónde nos podemos encontrar a Link?</title>
+		<option>En Dragon Ball</option>
+		<option>En el videojuego "La leyenda de Link"</option>
+		<option>En el Super Smash Bros</option>
+		<option>En Doraemon</option>
+		<answer>2</answer>
+	</question>
+    <!-- Link puede ser elegido para luchar en el campo de batalla -->
+
+    <question id="jklm_002">
+		<type>radio</type>
+		<title>2.- ¿Cual de estos juegos no existe?</title>
+		<option>Resident Evil 7</option>
+		<option>Coll of Duty: Ages of Majorca</option>
+		<option>Pokemon Sol</option>
+		<option>Imperium V</option>
+		<answer>1</answer>
+	</question>
+    <!-- El juego esta en desarrollo por DAM1 -->
+
+	<question id="jklm_003">
+		<type>text</type>
+		<title>3.- ¿Qué videojuego clásico arcade se basa en la colocación de bloques de distintas figuras
+        geométricas en la pantalla e ir haciendo líneas horizontales?</title>
+		<answer>tetris</answer>
+	</question>
+    <!-- Juego clásico que todos conocemos -->
+
+    <question id="jklm_004">
+		<type>text</type>
+		<title>4.- Pacman tiene 4 enemigos y esos enemigos son unos:</title>
+		<answer>fantasmas</answer>
+	</question>
+    <!-- Los 4 fantasmas que intentan matarlo -->
+
+	<question id="jklm_005">
+		<type>checkbox</type>
+		<title>5.- ¿Cual es el protagonista del videojuego "La leyenda de Zelda" y
+		la persona que tiene que rescatar?</title>
+		<option>Link (Protagonista)</option>
+		<option>Link (Persona a rescatar)</option>
+		<option>Zelda (Protagonista)</option>
+		<option>Zelda (Persona a rescatar)</option>
+		<answer>0</answer>
+		<answer>3</answer>
+	</question>
+    <!-- Link es el personaje con el que jugaremos para rescatar a Zelda -->
+
+    <question id="jklm_006">
+		<type>checkbox</type>
+		<title>6.- ¿Cuales son las princesas de Mario?</title>
+		<option>Peach</option>
+		<option>Pauline</option>
+		<option>Daisy</option>
+		<answer>0</answer>
+		<answer>2</answer>
+	</question>
+    <!-- Pauline no es ninguna princesa -->
+
+	<question id="jklm_007">
+		<type>select</type>
+		<title>7.- ¿Cual es la evolución de Pikachu?</title>
+		<option>Ryachu</option>
+		<option>Raychu</option>
+		<option>Raichu</option>
+		<option>Riachu</option> 
+		<answer>2</answer>
+	</question>
+    <!-- Raichu es la correcta -->
+
+	<question id="jklm_008">
+		<type>select</type>
+		<title>8.- ¿Que famoso tiene una saga de videojuego en honor a su nombre?</title>
+		<option>Arnold Schwarzenegger</option>
+		<option>Tony Hawk</option>
+		<option>Will Smith</option>
+		<option>Fernando Alonso</option> 
+		<answer>1</answer>
+	</question>
+    <!-- Tony Hawk es un famoso skater con el que se han realizado varios juegos de skate con su nombre -->
+
+	<question id="jklm_009">
+		<type>multiple</type>
+		<title>9.- ¿Qué juegos son de nintendo?</title>
+		<option>Sonic Adventure</option>
+        <option>Super Smash Bros</option>
+		<option>Donkey Kong</option>
+		<option>Golden Axe</option>
+		<answer>2</answer>
+		<answer>3</answer>
+	</question>	
+    <!-- Tanto sonic como Golden Axe NO son de nintendo, sino de SEGA -->
+
+	<question id="jklm_010">
+		<type>multiple</type>
+		<title>10.- ¿En qué juegos aparecen Zombies?</title>
+		<option>Resident Evil</option>
+		<option>Day Z</option>
+		<option>Call of Duty: Modern Warfare 2</option>
+		<option>Left 4 Dead</option>
+		<answer>0</answer>
+		<answer>1</answer>
+        <answer>3</answer>
+	</question>	
+    <!-- En ese Call of Duty en especial, no aparecen zombies-->
+
+</questions>
