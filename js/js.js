@@ -42,6 +42,7 @@ function gestionarXml(dadesXml) {
         opcionesRadio[i] = xmlDoc.getElementById("jklm_001").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosRadio(tituloRadio, "q1", opcionesRadio, "radioDiv1");
+    //ANSWER
     answRadio1 = xmlDoc.getElementById("jklm_001").getElementsByTagName('answer')[0].innerHTML;
 
     //-------------------------------------------
@@ -53,6 +54,7 @@ function gestionarXml(dadesXml) {
         opcionesRadio[i] = xmlDoc.getElementById("jklm_002").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosRadio(tituloRadio, "q2", opcionesRadio, "radioDiv2");
+    //ANSWER
     answRadio2 = xmlDoc.getElementById("jklm_002").getElementsByTagName('answer')[0].innerHTML;
 
 
@@ -64,10 +66,12 @@ function gestionarXml(dadesXml) {
     //TEXT --------------------------------------------------------------
     var tituloText = xmlDoc.getElementsByTagName("title")[2].innerHTML;
     ponerDatosText(tituloText, "q3");
+   //ANSWER
     answText1 = xmlDoc.getElementById("jklm_003").getElementsByTagName('answer')[0].innerHTML;
 
     tituloText = xmlDoc.getElementsByTagName("title")[3].innerHTML;
     ponerDatosText(tituloText, "q4");
+    //ANSWER
     answText2 = xmlDoc.getElementById("jklm_004").getElementsByTagName('answer')[0].innerHTML;
 
 
@@ -84,12 +88,11 @@ function gestionarXml(dadesXml) {
         opcionesCheckbox[i] = xmlDoc.getElementById("jklm_005").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosCheckbox(tituloCheckbox, "q5", opcionesCheckbox, "checkBoxDiv1");
-
+    //ANSWER
     var nres = xmlDoc.getElementById("jklm_005").getElementsByTagName('answer').length;
     for (i = 0; i < nres; i++) {
         answCheck1[i] = xmlDoc.getElementById("jklm_005").getElementsByTagName('answer')[i].innerHTML;
     }
-    alert(answCheck1);
 
     //---------------------------------------------------------
 
@@ -100,12 +103,15 @@ function gestionarXml(dadesXml) {
         opcionesCheckbox[i] = xmlDoc.getElementById("jklm_006").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosCheckbox(tituloCheckbox, "q6", opcionesCheckbox, "checkBoxDiv2");
-
+    //ANSWER
     var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
     for (i = 0; i < nres; i++) {
         answCheck2[i] = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer')[i].innerHTML;
     }
-    alert(answCheck2);
+
+
+
+
 
 
     //SELECT ------------------------------------------------------------
@@ -117,6 +123,7 @@ function gestionarXml(dadesXml) {
         opcionesSelect[i] = xmlDoc.getElementById("jklm_007").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosSelect(tituloSelect, "q7", opcionesSelect, 0);
+    //ANSWER
     answSelect1 = xmlDoc.getElementById("jklm_007").getElementsByTagName('answer')[0].innerHTML;
 
     //-------------------------------------------------------------------------------------
@@ -129,7 +136,16 @@ function gestionarXml(dadesXml) {
         opcionesSelect[i] = xmlDoc.getElementById("jklm_008").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosSelect(tituloSelect, "q8", opcionesSelect, 1);
+    //ANSWER
     answSelect2 = xmlDoc.getElementById("jklm_008").getElementsByTagName('answer')[0].innerHTML;
+
+
+
+
+
+
+
+
 
     //MULTIPLE ----------------------------------------------------------
     var tituloMultiple = xmlDoc.getElementsByTagName("title")[8].innerHTML;
@@ -142,6 +158,11 @@ function gestionarXml(dadesXml) {
         opcionesSelect[i] = xmlDoc.getElementById("jklm_009").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosSelect(tituloSelect, "q9", opcionesSelect, 2);
+    //ANSWER
+    var nres = xmlDoc.getElementById("jklm_009").getElementsByTagName('answer').length;
+    for (i = 0; i < nres; i++) {
+        answMult1[i] = xmlDoc.getElementById("jklm_009").getElementsByTagName('answer')[i].innerHTML;
+    }
 
     //------------------------------------------------------
 
@@ -155,7 +176,11 @@ function gestionarXml(dadesXml) {
         opcionesSelect[i] = xmlDoc.getElementById("jklm_010").getElementsByTagName('option')[i].innerHTML;
     }
     ponerDatosSelect(tituloSelect, "q10", opcionesSelect, 3);
-
+    //ANSWER
+    var nres = xmlDoc.getElementById("jklm_010").getElementsByTagName('answer').length;
+    for (i = 0; i < nres; i++) {
+        answMult2[i] = xmlDoc.getElementById("jklm_010").getElementsByTagName('answer')[i].innerHTML;
+    }
 }
 
 

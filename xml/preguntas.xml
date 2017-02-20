@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<!--<!DOCTYPE questions>-->
-
 <!-- Preguntas sobre videojuegos -->
-<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
 
+<!DOCTYPE questions SYSTEM "questions.dtd">
+
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
    	<question id="jklm_001">
 		<type>radio</type>
 		<title>1.- ¿Dónde nos podemos encontrar a Link?</title>
