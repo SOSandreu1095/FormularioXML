@@ -3,14 +3,14 @@ var formElement = null;
 var nota = 0.0;
 
 //2 Radio, 2 Text, 2 Checkbox, 2 Select, 2 Mulltiple
-var answRadio1; //Fet
-var answRadio2; //Fet
-var answText1; //Fet
-var answText2; //Fet
+var answRadio1;
+var answRadio2;
+var answText1;
+var answText2;
 var answCheck1 = [];
 var answCheck2 = [];
-var answSelect1; //Fet
-var answSelect2; //Fet
+var answSelect1;
+var answSelect2;
 var answMult1 = [];
 var answMult2 = [];
 
@@ -212,8 +212,8 @@ function ponerDatosRadio(tituloRadio, IDposicion, opciones, divID) {
         var input = document.createElement("input");
         var label = document.createElement("label");
         label.innerHTML = opciones[i];
-        label.setAttribute("for", "rad_" + i);
-        input.id = "rad_" + i;
+        label.setAttribute("for", "rad_" + i + divID);
+        input.id = "rad_" + i + divID;
         input.type = "radio";
         input.name = "rad" + divID;
         radioContainer.appendChild(input);
@@ -273,14 +273,48 @@ function ponerDatosMultiple(tituloMultiple, IDposicion) {
 //-----------------------------------------------------------------
 
 function corregir() {
+    corregirRadio("radradioDiv1", answRadio1, 1);
+    corregirRadio("radradioDiv2", answRadio2, 2);
+
     corregirText("text1", answText1, 3);
     corregirText("text2", answText2, 4);
 
-    corregirCheckbox1(answCheck1, 5);
-    corregirCheckbox2(answCheck2, 6);
+    corregirCheckbox("checkcheckBoxDiv1", answCheck1, 5);
+    corregirCheckbox("checkcheckBoxDiv2", answCheck2, 6);
 
     corregirSelect("sel1", answSelect1, 7);
     corregirSelect("sel2", answSelect2, 8);
+
+    corregirMultiple("mult1", answMult1, 9);
+    corregirMultiple("mult2", answMult2, 10);
+}
+
+
+function corregirRadio(divID, answer, numPregunta) {
+    var f = formElement;
+    var rad;
+    var fin = false;
+
+    switch (divID) {
+        case "radradioDiv1":
+            rad = f.radradioDiv1;
+            break;
+        case "radradioDiv2":
+            rad = f.radradioDiv2;
+            break;
+    }
+
+    for (i = 0; (i < rad.length) && !(fin); i++) {
+        if (rad[i].checked) {
+            fin = true;
+            if (i == answer) {
+                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA!");
+                nota += 1;
+            } else {
+                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡INCORRECTA!");
+            }
+        }
+    }
 }
 
 
@@ -298,13 +332,24 @@ function corregirText(IDtext, answer, numPregunta) {
 }
 
 
-function corregirCheckbox1(answer, numPregunta) {
+function corregirCheckbox(divID, answer, numPregunta) {
     // Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo
     // guarda en un array escorrecta[]
     var f = formElement;
     var escorrecta = [];
-    for (i = 0; i < f.checkcheckBoxDiv1.length; i++) {  //"checkcheckBoxDiv1" es el nombre asignado a todos los checkbox
-        if (f.checkcheckBoxDiv1[i].checked) {
+    var chk;
+
+    switch (divID) {
+        case "checkcheckBoxDiv1":
+            chk = f.checkcheckBoxDiv1;
+            break;
+        case "checkcheckBoxDiv2":
+            chk = f.checkcheckBoxDiv2;
+            break;
+    }
+
+    for (i = 0; i < chk.length; i++) {  //"checkcheckBoxDiv1" es el nombre asignado a todos los checkbox
+        if (chk[i].checked) {
             escorrecta[i] = false;
             for (j = 0; j < answer.length; j++) {
                 if (i == answer[j]) escorrecta[i] = true;
@@ -312,26 +357,27 @@ function corregirCheckbox1(answer, numPregunta) {
         }
     }
     //Por cada opción que está chequedada, si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    for (i = 0; i < f.checkcheckBoxDiv1.length; i++) {
-        if (f.checkcheckBoxDiv1[i].checked) {
+    for (i = 0; i < chk.length; i++) {
+        if (chk[i].checked) {
             if (escorrecta[i]) {
                 nota += 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA");
+                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA!");
             } else {
                 nota -= 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> !INCORRECTA¡");
+                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡INCORRECTA!");
             }
         }
     }
 }
 
-function corregirCheckbox2(answer, numPregunta) {
-    // Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo
-    // guarda en un array escorrecta[]
+function corregirMultiple(IDmulti, answer, numPregunta) {
     var f = formElement;
     var escorrecta = [];
-    for (i = 0; i < f.checkcheckBoxDiv2.length; i++) {  //"checkcheckBoxDiv1" es el nombre asignado a todos los checkbox
-        if (f.checkcheckBoxDiv2[i].checked) {
+    var mult = document.getElementById(IDmulti);
+    alert(mult.length);
+
+    for (i = 0; i < mult.length; i++) { 
+        if (mult[i].selected) {
             escorrecta[i] = false;
             for (j = 0; j < answer.length; j++) {
                 if (i == answer[j]) escorrecta[i] = true;
@@ -339,19 +385,18 @@ function corregirCheckbox2(answer, numPregunta) {
         }
     }
     //Por cada opción que está chequedada, si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    for (i = 0; i < f.checkcheckBoxDiv2.length; i++) {
-        if (f.checkcheckBoxDiv2[i].checked) {
+    for (i = 0; i < mult.length; i++) {
+        if (mult[i].selected) {
             if (escorrecta[i]) {
                 nota += 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA");
+                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA!");
             } else {
                 nota -= 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> !INCORRECTA¡");
+                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡INCORRECTA!");
             }
         }
     }
 }
-
 
 
 function corregirSelect(IDselect, answer, numPregunta) {
@@ -378,9 +423,9 @@ function addCorreccionHtml(s) {
 function presentarNota() {
     addCorreccionHtml("Nota: " + nota + " puntos sobre 10");
     if (nota >= 5) {
-        alert("¡ENHORABUENA! HAS APROBADO CON UN "+nota);
+        alert("¡ENHORABUENA! HAS APROBADO CON UN " + nota);
     } else {
-        alert("LÁSTIMA! HAS SUSPENDIDO CON UN "+nota);
+        alert("LÁSTIMA! HAS SUSPENDIDO CON UN " + nota);
     }
 }
 
