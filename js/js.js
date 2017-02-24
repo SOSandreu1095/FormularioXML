@@ -374,7 +374,6 @@ function corregirMultiple(IDmulti, answer, numPregunta) {
     var f = formElement;
     var escorrecta = [];
     var mult = document.getElementById(IDmulti);
-    alert(mult.length);
 
     for (i = 0; i < mult.length; i++) { 
         if (mult[i].selected) {
