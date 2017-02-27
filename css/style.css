@@ -6,10 +6,11 @@ body, html {
 #header {
     display: table;
     background: green;
-    width: 100%;
+    width: 90%;
     height: 20%;
     position: relative;
     margin-top: 2%;
+    margin-left: 5%;
 }
 
 

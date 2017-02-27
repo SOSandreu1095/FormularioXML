@@ -22,10 +22,13 @@ window.onload = function () {
     //CORREGIR AL APRETAR EL BOTON
     formElement = document.getElementsByTagName("form")[0];
     formElement.onsubmit = function () {
-        if (confirm("¿Seguro que desea corregir?")) {
-            inicializar();
-            corregir();
-            presentarNota();
+
+        if (comprobarContestadas()) {
+            if (confirm("¿Seguro que desea corregir?")) {
+                inicializar();
+                corregir();
+                presentarNota();
+            }
         }
         return false;
     }
@@ -163,15 +166,12 @@ function gestionarXml(dadesXml) {
 
     //MULTIPLE ----------------------------------------------------------
     var tituloMultiple = xmlDoc.getElementsByTagName("title")[8].innerHTML;
-    ponerDatosMultiple(tituloMultiple, "q9");
-
-    var tituloSelect = xmlDoc.getElementsByTagName("title")[8].innerHTML;
-    var opcionesSelect = [];
+    var opcionesMultiple = [];
     var nopt = xmlDoc.getElementById("jklm_009").getElementsByTagName('option').length;
     for (i = 0; i < nopt; i++) {
-        opcionesSelect[i] = xmlDoc.getElementById("jklm_009").getElementsByTagName('option')[i].innerHTML;
+        opcionesMultiple[i] = xmlDoc.getElementById("jklm_009").getElementsByTagName('option')[i].innerHTML;
     }
-    ponerDatosSelect(tituloSelect, "q9", opcionesSelect, 2);
+    ponerDatosMultiple(tituloMultiple, "q9", opcionesMultiple, 2);
     //ANSWER
     var nres = xmlDoc.getElementById("jklm_009").getElementsByTagName('answer').length;
     for (i = 0; i < nres; i++) {
@@ -181,15 +181,12 @@ function gestionarXml(dadesXml) {
     //------------------------------------------------------
 
     var tituloMultiple = xmlDoc.getElementsByTagName("title")[9].innerHTML;
-    ponerDatosMultiple(tituloMultiple, "q10");
-
-    var tituloSelect = xmlDoc.getElementsByTagName("title")[9].innerHTML;
-    var opcionesSelect = [];
+    var opcionesMultiple = [];
     var nopt = xmlDoc.getElementById("jklm_010").getElementsByTagName('option').length;
     for (i = 0; i < nopt; i++) {
-        opcionesSelect[i] = xmlDoc.getElementById("jklm_010").getElementsByTagName('option')[i].innerHTML;
+        opcionesMultiple[i] = xmlDoc.getElementById("jklm_010").getElementsByTagName('option')[i].innerHTML;
     }
-    ponerDatosSelect(tituloSelect, "q10", opcionesSelect, 3);
+    ponerDatosMultiple(tituloMultiple, "q10", opcionesMultiple, 3);
     //ANSWER
     var nres = xmlDoc.getElementById("jklm_010").getElementsByTagName('answer').length;
     for (i = 0; i < nres; i++) {
@@ -253,6 +250,10 @@ function ponerDatosSelect(tituloSelect, IDposicion, opciones, numSelect) {
 
     var select = document.getElementsByTagName("select")[numSelect];
 
+    var option = document.createElement("option");
+    option.text = "Elige una respuesta..."
+    option.value = 0;
+    select.options.add(option);
     for (i = 0; i < opciones.length; i++) {
         var option = document.createElement("option");
         option.text = opciones[i];
@@ -262,8 +263,15 @@ function ponerDatosSelect(tituloSelect, IDposicion, opciones, numSelect) {
 }
 
 //MULTIPLE
-function ponerDatosMultiple(tituloMultiple, IDposicion) {
+function ponerDatosMultiple(tituloMultiple, IDposicion, opciones, numSelect) {
     document.getElementById(IDposicion).innerHTML = tituloMultiple;
+    var select = document.getElementsByTagName("select")[numSelect];
+    for (i = 0; i < opciones.length; i++) {
+        var option = document.createElement("option");
+        option.text = opciones[i];
+        option.value = i;
+        select.options.add(option);
+    }
 }
 
 
@@ -375,7 +383,7 @@ function corregirMultiple(IDmulti, answer, numPregunta) {
     var escorrecta = [];
     var mult = document.getElementById(IDmulti);
 
-    for (i = 0; i < mult.length; i++) { 
+    for (i = 0; i < mult.length; i++) {
         if (mult[i].selected) {
             escorrecta[i] = false;
             for (j = 0; j < answer.length; j++) {
@@ -400,7 +408,7 @@ function corregirMultiple(IDmulti, answer, numPregunta) {
 
 function corregirSelect(IDselect, answer, numPregunta) {
     var sel = document.getElementById(IDselect);
-    if (sel.selectedIndex == answer) {
+    if (sel.selectedIndex - 1 == answer) {
         addCorreccionHtml(numPregunta + " --> ¡CORRECTA!");
         nota += 1;
     } else {
@@ -420,6 +428,7 @@ function addCorreccionHtml(s) {
 
 
 function presentarNota() {
+    nota = nota.toFixed(2);
     addCorreccionHtml("Nota: " + nota + " puntos sobre 10");
     if (nota >= 5) {
         alert("¡ENHORABUENA! HAS APROBADO CON UN " + nota);
@@ -432,4 +441,102 @@ function presentarNota() {
 function inicializar() {
     document.getElementById('resultados').innerHTML = "";
     nota = 0.0;
+}
+
+
+/**
+ * Comprueba que todas las preguntas esten contestadas antes de corregir el test
+ */
+function comprobarContestadas() {
+    var f = formElement;
+    var checked = false;
+    var cnt = 0;
+
+    //Empezamos mirando los radio
+    for (i = 0; i < f.radradioDiv1.length; i++) {
+        if (f.radradioDiv1[i].checked) checked = true;
+    }
+    if (!checked) {
+        alert("¡Contesta la primera pregunta!");
+        f.elements[0].focus();
+        return false;
+    }
+    cnt += f.radradioDiv1.length;
+    checked = false;
+
+    for (i = 0; i < f.radradioDiv2.length; i++) {
+        if (f.radradioDiv2[i].checked) checked = true;
+    }
+    if (!checked) {
+        alert("¡Contesta la segunda pregunta!");
+        f.elements[f.radradioDiv1.length].focus();
+        return false;
+    }
+    cnt += f.radradioDiv2.length;
+    checked = false;
+
+    //Miramos los text
+    if (document.getElementById("text1").value.length == 0) {
+        alert("¡Contesta la tercera pregunta!");
+        document.getElementById("text1").focus();
+        return false;
+    }
+
+    if (document.getElementById("text2").value.length == 0) {
+        alert("¡Contesta la cuarta pregunta!");
+        document.getElementById("text2").focus();
+        return false;
+    }
+    cnt += 2;
+
+    //Miramos los checkbox
+    for (i = 0; i < f.checkcheckBoxDiv1.length; i++) {
+        if (f.checkcheckBoxDiv1[i].checked) checked = true;
+    }
+    if (!checked) {
+        alert("¡Contesta la quinta pregunta!");
+        f.elements[cnt].focus();
+        return false;
+    }
+    cnt += f.checkcheckBoxDiv1.length;
+    checked = false;
+
+    for (i = 0; i < f.checkcheckBoxDiv2.length; i++) {
+        if (f.checkcheckBoxDiv2[i].checked) checked = true;
+    }
+    if (!checked) {
+        alert("¡Contesta la sexta pregunta!");
+        f.elements[cnt].focus();
+        return false;
+    }
+    cnt += f.checkcheckBoxDiv2.length;
+    checked = false;
+
+    //Miramos los select simple
+    if (document.getElementById("sel1").selectedIndex == 0) {
+        alert("¡Contesta la séptima pregunta!");
+        document.getElementById("sel1").focus();
+        return false;
+    }
+
+    if (document.getElementById("sel2").selectedIndex == 0) {
+        alert("¡Contesta la octava pregunta!");
+        document.getElementById("sel2").focus();
+        return false;
+    }
+
+    //Miramos los select Mulltiple
+
+    if (document.getElementById("mult1").selectedIndex == -1) {
+        alert("¡Contesta la novena pregunta!");
+        document.getElementById("mult1").focus();
+        return false;
+    }
+    if (document.getElementById("mult2").selectedIndex == -1) {
+        alert("¡Contesta la décima pregunta!");
+        document.getElementById("mult2").focus();
+        return false;
+    }
+
+    return true;
 }
