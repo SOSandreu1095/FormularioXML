@@ -1,0 +1,93 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    display: table;
+    background: green;
+    width: 100%;
+    height: 20%;
+    position: relative;
+    margin-top: 2%;
+}
+
+
+#logo1 {
+    position: absolute;
+    left: 2%;
+    height: 100%;
+}
+
+#logo2 {
+    position: absolute;
+    right: 2%;
+    height: 100%;
+}
+
+
+#header h2 {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 3.5vw;
+}
+
+form {
+    margin: 0;
+    padding: 2%;
+    width: 70%;
+    display: block;
+    margin: auto;
+    background: cyan;
+}
+
+h3 {
+    font-size: 2.6vw;
+}
+
+select {
+    font-size: 2vw;
+}
+
+input[type=text]{
+    font-size: 1.8vw;
+}
+
+input[type=checkbox], input[type=radio]{
+    font-size: 3vw;
+    zoom: 1.5;
+}
+
+#butCorregir {
+    width: 100%;
+    font-size: 2vw;
+}
+
+label {
+    font-size: 1.5vw;
+    zoom: 1.5;
+}
+
+/*
+body, input, select, label{
+    font-size:2vw
+}
+
+h3 {
+    font-size:3vw
+}
+
+input,select{
+    width:50%
+}
+
+input[type=checkbox]{
+    width:5%;
+    zoom:1.5
+}
+
+form{
+    background-color:aliceblue;
+}
+*/
