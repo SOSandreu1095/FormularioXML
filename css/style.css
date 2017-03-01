@@ -58,8 +58,8 @@ body{
 
 #timer {
     position: fixed;
-    background: red;
-    opacity: 0.9;
+    opacity: 0.95;
+    background: #54AE06;
     font-weight: bold;
     text-align: center;
     width: 30%;
@@ -71,36 +71,71 @@ body{
     display: none;
 }
 
+.listIntro {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.listIntro li {
+    float: left;
+    width: calc(50% - 4px);
+    text-align: center;
+    border: solid 2px black;
+    font-size: 2.2vw;
+    line-height: 200%;
+}
+
+.listIntro li:hover {
+    font-size: 2.4vw;
+}
+
+#historia{
+    border-radius: 8px 0px 0px 0px;
+    background: #D20808;
+    color: yellow;
+}
+
+#normas {
+    border-radius: 0px 8px 0px 0px;
+}
+
 #intro {
     background: #43751F;
     color: white;
     width: 80%;
     display: block;
     margin: auto;
-    text-align: center;
     margin-top: 2%;
-    padding: 2%;
     border: solid 2px black;;
     border-radius: 10px;
 }
 
 #intro h2{
     font-size: 3vw;
+    text-align: center;
 }
 
-#intro p {
+#intro p{
   text-align: justify;
-  font-weight: bold;
   font-size: 2vw;
+  padding: 2%;
+}
+
+#lNormas {
+    display: none;
+    font-size: 2vw;
 }
 
 #start {
-    background: red;
+    background: #D20808;
     color: white;
     width: 30%;
     display: block;
     margin: auto;
     padding: 1%;
+    padding-left: 3.5%;
     line-height: 200%;
     font-size: 2.5vw;
     margin-top: 7.5%;
@@ -116,17 +151,19 @@ body{
 }
 
 #quest {
-    background: deeppink;
     display: none;
 }
 
 form {
-    margin: 0;
     padding: 2%;
     width: 90%;
     display: block;
     margin: auto;
-    background: cyan;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background: #75BA7C;
+    border: solid 2px black;
+    border-radius: 10px;
 }
 
 h3 {
@@ -160,6 +197,20 @@ input[type=checkbox], input[type=radio]{
 label {
     font-size: 1.5vw;
     zoom: 1.5;
+}
+
+#butCorregir:hover {
+    transform: scale(1.1);
+}
+
+#resultados {
+    font-size: 2vw;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 2%;
+    background: firebrick;
+    display: none;
+    margin-bottom: 3%;
 }
 
 /*

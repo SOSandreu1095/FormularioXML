@@ -1,7 +1,7 @@
 //VARIABLES
 var formElement = null;
 var nota = 0.0;
-var time = 180; //Segundos para hacer el test
+var time = 2; //Segundos para hacer el test
 var timer; //Timer para el intervalo
 
 //2 Radio, 2 Text, 2 Checkbox, 2 Select, 2 Mulltiple
@@ -23,9 +23,33 @@ window.onload = function () {
 
     formElement = document.getElementsByTagName("form")[0];
 
+    //Cabecera
+    document.getElementById("historia").onclick = function(){
+        document.getElementById("historia").style.background = "#D20808";
+        document.getElementById("historia").style.color = "yellow";
+        document.getElementById("normas").style.color = "white";
+        document.getElementById("normas").style.background = "#43751F";
+        document.getElementById("lNormas").style.display = "none";
+        document.getElementById("pHistoria").style.display = "table";
+        document.getElementById("tInt").innerHTML = "UOG - INTRODUCCIÓN"
+    }
+
+    document.getElementById("normas").onclick = function(){
+        document.getElementById("normas").style.background = "#D20808";
+        document.getElementById("normas").style.color = "yellow";
+        document.getElementById("historia").style.color = "white";
+        document.getElementById("historia").style.background = "#43751F";
+        document.getElementById("pHistoria").style.display = "none";
+        document.getElementById("lNormas").style.display = "block";
+        document.getElementById("tInt").innerHTML = "UOG - NORMATIVA"
+    }
+
     //Boton empezar
     document.getElementById("start").onclick = function () {
-        empezarTest();
+        if(confirm("¿Estas seguro que deseas empezar el test? Recomendamos ver las normas")){
+            empezarTest();
+            window.scrollTo(0,0);
+        }
     }
 
     //CORREGIR AL APRETAR EL BOTON
@@ -291,6 +315,9 @@ function ponerDatosMultiple(tituloMultiple, IDposicion, opciones, numSelect) {
 //-----------------------------------------------------------------
 
 function corregir() {
+    document.getElementById("resultados").style.display = "block";
+    addCorreccionHtml("RESULTADOS");
+
     corregirRadio("radradioDiv1", answRadio1, 1);
     corregirRadio("radradioDiv2", answRadio2, 2);
 
@@ -305,6 +332,8 @@ function corregir() {
 
     corregirMultiple("mult1", answMult1, 9);
     corregirMultiple("mult2", answMult2, 10);
+
+    window.scrollTo(0,document.body.scrollHeight);
 }
 
 
@@ -561,11 +590,27 @@ function empezarTest() {
 
 function actualizarTemp() {
     time--;
+    t = document.getElementById("timer");
 
     if (time >= 0) {
+        if (time < 30){
+            //Rojo
+            t.style.background = "#F21C1C";
+        } else {
+            if (time < 60) {
+                t.style.background = "#D28808";
+            } else {
+                if (time < 120) {
+                t.style.background = "#A0D208";
+                } else {
+                    t.style.background = "#54AE06";
+                }
+            }
+        }
         document.getElementById("temp").innerHTML = time;
     } else {
         clearInterval(timer);
+        t.style.display = "none";
         inicializar();
         corregir();
         presentarNota();
