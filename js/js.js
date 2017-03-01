@@ -1,6 +1,8 @@
 //VARIABLES
 var formElement = null;
 var nota = 0.0;
+var time = 180; //Segundos para hacer el test
+var timer; //Timer para el intervalo
 
 //2 Radio, 2 Text, 2 Checkbox, 2 Select, 2 Mulltiple
 var answRadio1;
@@ -19,8 +21,14 @@ var answMult2 = [];
 
 window.onload = function () {
 
-    //CORREGIR AL APRETAR EL BOTON
     formElement = document.getElementsByTagName("form")[0];
+
+    //Boton empezar
+    document.getElementById("start").onclick = function () {
+        empezarTest();
+    }
+
+    //CORREGIR AL APRETAR EL BOTON
     formElement.onsubmit = function () {
 
         if (comprobarContestadas()) {
@@ -28,6 +36,8 @@ window.onload = function () {
                 inicializar();
                 corregir();
                 presentarNota();
+                clearInterval(timer);
+                document.getElementById("timer").style.display = "none";
             }
         }
         return false;
@@ -539,4 +549,25 @@ function comprobarContestadas() {
     }
 
     return true;
+}
+
+function empezarTest() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("quest").style.display = "block";
+    document.getElementById("timer").style.display = "block";
+
+    timer = setInterval(actualizarTemp, 1000);
+}
+
+function actualizarTemp() {
+    time--;
+
+    if (time >= 0) {
+        document.getElementById("temp").innerHTML = time;
+    } else {
+        clearInterval(timer);
+        inicializar();
+        corregir();
+        presentarNota();
+    }
 }

@@ -3,14 +3,24 @@ body, html {
     padding: 0;
 }
 
+html {
+    background: #304E27;
+}
+
+body{
+    width: 90%;
+    margin-left: 5%;
+}
+
 #header {
     display: table;
-    background: green;
-    width: 90%;
+    background: #43751F;
+    width: 100%;
     height: 20%;
+    border: solid 2px;
+    border-radius: 10px;
     position: relative;
     margin-top: 2%;
-    margin-left: 5%;
 }
 
 
@@ -18,12 +28,23 @@ body, html {
     position: absolute;
     left: 2%;
     height: 100%;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
 }
 
 #logo2 {
     position: absolute;
     right: 2%;
     height: 100%;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+#logo1:hover, #logo2:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 
@@ -31,13 +52,78 @@ body, html {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    color: white;
     font-size: 3.5vw;
+}
+
+#timer {
+    position: fixed;
+    background: red;
+    opacity: 0.9;
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+    line-height: 200%;
+    left: 35%;
+    border: solid 2px;
+    border-radius: 5px;
+    top: 0;
+    display: none;
+}
+
+#intro {
+    background: #43751F;
+    color: white;
+    width: 80%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 2%;
+    padding: 2%;
+    border: solid 2px black;;
+    border-radius: 10px;
+}
+
+#intro h2{
+    font-size: 3vw;
+}
+
+#intro p {
+  text-align: justify;
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+#start {
+    background: red;
+    color: white;
+    width: 30%;
+    display: block;
+    margin: auto;
+    padding: 1%;
+    line-height: 200%;
+    font-size: 2.5vw;
+    margin-top: 7.5%;
+    margin-bottom: 5%;
+    border-radius: 50px;
+    border:solid 2px;
+    opacity: 0.9;
+}
+
+#start:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+#quest {
+    background: deeppink;
+    display: none;
 }
 
 form {
     margin: 0;
     padding: 2%;
-    width: 70%;
+    width: 90%;
     display: block;
     margin: auto;
     background: cyan;
@@ -61,8 +147,14 @@ input[type=checkbox], input[type=radio]{
 }
 
 #butCorregir {
-    width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+    width: 80%;
+    height: 10%;
     font-size: 2vw;
+    border:solid;
+    border-radius: 50px;
 }
 
 label {
