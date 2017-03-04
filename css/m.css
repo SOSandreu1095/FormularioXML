@@ -1,0 +1,221 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #304E27;
+}
+
+body{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#header {
+    display: table;
+    background: #43751F;
+    width: 100%;
+    height: 15%;
+    border: solid 2px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 2%;
+}
+
+
+#logo1 {
+    position: absolute;
+    left: 2%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+#logo2 {
+    position: absolute;
+    right: 2%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+#logo1:hover, #logo2:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+
+#header h2 {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding-right: 30%;
+    padding-left: 30%;
+    color: white;
+    font-size: 3.5vw;
+}
+
+#timer {
+    position: fixed;
+    opacity: 0.95;
+    background: #54AE06;
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+    line-height: 200%;
+    font-size: 2.4vw;
+    left: 35%;
+    border: solid 2px;
+    border-radius: 5px;
+    top: 0;
+    display: none;
+}
+
+.listIntro {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.listIntro li {
+    float: left;
+    width: calc(50% - 4px);
+    text-align: center;
+    border: solid 2px black;
+    font-size: 2.2vw;
+    line-height: 200%;
+}
+
+.listIntro li:hover {
+    font-size: 2.4vw;
+}
+
+#historia{
+    border-radius: 8px 0px 0px 0px;
+    background: #D20808;
+    color: yellow;
+}
+
+#normas {
+    border-radius: 0px 8px 0px 0px;
+}
+
+#intro {
+    background: #43751F;
+    color: white;
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    border: solid 2px black;;
+    border-radius: 10px;
+}
+
+#intro h2{
+    font-size: 3vw;
+    text-align: center;
+}
+
+#intro p{
+  text-align: justify;
+  font-size: 2vw;
+  padding: 2%;
+}
+
+#lNormas {
+    display: none;
+    font-size: 2vw;
+}
+
+#start {
+    background: #D20808;
+    color: white;
+    width: 30%;
+    display: block;
+    margin: auto;
+    padding: 1%;
+    padding-left: 9%;
+    line-height: 200%;
+    font-size: 2.5vw;
+    margin-top: 7.5%;
+    margin-bottom: 5%;
+    border-radius: 50px;
+    border:solid 2px;
+    opacity: 0.9;
+}
+
+#start:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+#quest {
+    display: none;
+}
+
+form {
+    padding: 2%;
+    width: 95%;
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background: #75BA7C;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+h3 {
+    font-size: 2.6vw;
+}
+
+select {
+    font-size: 2vw;
+}
+
+input[type=text]{
+    font-size: 1.8vw;
+}
+
+input[type=checkbox], input[type=radio]{
+    font-size: 3vw;
+    zoom: 1.5;
+}
+
+#butCorregir, #butRegresar {
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+    width: 80%;
+    height: 10%;
+    font-size: 2vw;
+    border:solid;
+    border-radius: 50px;
+}
+
+#butRegresar{
+    display: none;
+}
+
+label {
+    font-size: 1.5vw;
+    zoom: 1.5;
+}
+
+#butCorregir:hover, #butRegresar:hover {
+    transform: scale(1.1);
+}
+
+#resultados {
+    font-size: 2vw;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 2%;
+    background: firebrick;
+    display: none;
+    margin-bottom: 3%;
+}
