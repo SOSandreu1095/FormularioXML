@@ -69,9 +69,13 @@ Funcionalidades adicionales secundarias
 ---------------------------------------
 En este caso son pequeñas cosas y funciones que he creado para evitar errores y facilitar lo máximo posible la interacción entre el usuario y la web
 
+* ANIMACIONES / HOVER
+ * Realizado un hover rotatativo para ambos logos en la parte superior (una tontería que es lo que más me gusta de la web)
+ * Hover en los botones
+
 * SCROLL AL INICIAR EL TEST
   * Al iniciar el test la pantalla hace scroll hacia arriba de la página para ir hasta la primera pregunta
-  * No es muy destacable, pero en caso de que la pantalla principal fuese muy larga evitariamos problemas de mostrar el test por la mitad y tener que obligar al usuario a hacer scroll
+  * No es muy destacable, pero en caso de que la pantalla principal fuese muy larga evitaríamos problemas de mostrar el test por la mitad y tener que obligar al usuario a hacer scroll
 
 * SCROLL PARA MOSTRAR LA CORRECCIÓN
   * La corrección sale al final de la página, y para que sea visualizada automáticamente por pantalla he realizado un scroll por javascript hasta el final de la página
