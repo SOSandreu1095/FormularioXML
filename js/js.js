@@ -585,12 +585,12 @@ function comprobarContestadas() {
 }
 
 function empezarTest() {
-    time = 180;
+    formElement.reset();
+    time = 2;
+    timer = setInterval(actualizarTemp, 1000);
+    document.getElementById("timer").style.display = "block";
     document.getElementById("intro").style.display = "none";
     document.getElementById("quest").style.display = "block";
-    document.getElementById("timer").style.display = "block";
-
-    timer = setInterval(actualizarTemp, 1000);
 }
 
 function actualizarTemp() {
