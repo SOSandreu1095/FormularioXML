@@ -28,7 +28,7 @@ window.onload = function () {
         document.getElementById("historia").style.background = "#D20808";
         document.getElementById("historia").style.color = "yellow";
         document.getElementById("normas").style.color = "white";
-        document.getElementById("normas").style.background = "#43751F";
+        document.getElementById("normas").style.background = "#53A11C";
         document.getElementById("lNormas").style.display = "none";
         document.getElementById("pHistoria").style.display = "table";
         document.getElementById("tInt").innerHTML = "UOG - INTRODUCCIÓN"
@@ -38,7 +38,7 @@ window.onload = function () {
         document.getElementById("normas").style.background = "#D20808";
         document.getElementById("normas").style.color = "yellow";
         document.getElementById("historia").style.color = "white";
-        document.getElementById("historia").style.background = "#43751F";
+        document.getElementById("historia").style.background = "#53A11C";
         document.getElementById("pHistoria").style.display = "none";
         document.getElementById("lNormas").style.display = "block";
         document.getElementById("tInt").innerHTML = "UOG - NORMATIVA"
@@ -586,7 +586,7 @@ function comprobarContestadas() {
 
 function empezarTest() {
     formElement.reset();
-    time = 2;
+    time = 180;
     timer = setInterval(actualizarTemp, 1000);
     document.getElementById("timer").style.display = "block";
     document.getElementById("intro").style.display = "none";
