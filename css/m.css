@@ -10,6 +10,7 @@ html {
 body{
     width: 90%;
     margin-left: 5%;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #header {
@@ -56,6 +57,7 @@ body{
     padding-left: 30%;
     color: white;
     font-size: 3.5vw;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #timer {
@@ -86,12 +88,13 @@ body{
     width: calc(50% - 4px);
     text-align: center;
     border: solid 2px black;
-    font-size: 2.2vw;
-    line-height: 200%;
+    font-size: 2.4vw;
+    line-height: 230%;
+    font-weight: bold;
 }
 
 .listIntro li:hover {
-    font-size: 2.4vw;
+    font-size: 2.6vw;
 }
 
 #historia{
@@ -122,7 +125,8 @@ body{
 
 #intro p{
   text-align: justify;
-  font-size: 2vw;
+  font-size: 3vw;
+  line-height: 150%;
   padding: 2%;
 }
 

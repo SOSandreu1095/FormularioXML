@@ -10,6 +10,7 @@ html {
 body{
     width: 90%;
     margin-left: 5%;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #header {
@@ -54,6 +55,7 @@ body{
     vertical-align: middle;
     color: white;
     font-size: 3.5vw;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #timer {
@@ -85,7 +87,8 @@ body{
     text-align: center;
     border: solid 2px black;
     font-size: 2.2vw;
-    line-height: 200%;
+    line-height: 220%;
+    font-weight: bold;
 }
 
 .listIntro li:hover {
