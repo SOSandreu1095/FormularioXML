@@ -10,7 +10,7 @@ html {
 body{
     width: 90%;
     margin-left: 5%;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Aldrich', sans-serif;
 }
 
 #header {
@@ -57,7 +57,6 @@ body{
     padding-left: 30%;
     color: white;
     font-size: 3.5vw;
-    font-family: 'Press Start 2P', cursive;
 }
 
 #timer {
