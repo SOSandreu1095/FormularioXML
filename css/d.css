@@ -63,7 +63,10 @@ body{
     vertical-align: middle;
     color: white;
     font-size: 3.5vw;
+    line-height: 300%;
 }
+
+
 
 #timer {
     position: fixed;
@@ -138,10 +141,10 @@ body{
 }
 
 #intro p{
-  text-align: justify;
-  font-size: 1.9vw;
-  line-height: 150%;
-  padding: 2%;
+    text-align: justify;
+    font-size: 1.9vw;
+    line-height: 150%;
+    padding: 2%;
 }
 
 #lNormas {
@@ -222,8 +225,8 @@ input[type=checkbox], input[type=radio]{
     margin: auto;
     margin-top: 5%;
     width: 70%;
-    height: 10%;
     font-size: 1.8vw;
+    line-height: 320%;
     font-family: 'Aldrich', sans-serif;
     border:solid black;
     border-radius: 50px;

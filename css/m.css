@@ -64,6 +64,7 @@ body{
     padding-left: 30%;
     color: white;
     font-size: 3.5vw;
+    line-height: 200%;
 }
 
 #timer {
@@ -138,10 +139,10 @@ body{
 }
 
 #intro p{
-  text-align: justify;
-  font-size: 3vw;
-  line-height: 150%;
-  padding: 2%;
+    text-align: justify;
+    font-size: 3vw;
+    line-height: 150%;
+    padding: 2%;
 }
 
 #lNormas {
@@ -222,8 +223,8 @@ input[type=checkbox], input[type=radio]{
     margin: auto;
     margin-top: 5%;
     width: 70%;
-    height: 7%;
     font-size: 1.8vw;
+    line-height: 350%;
     font-family: 'Aldrich', sans-serif;
     border:solid black;
     border-radius: 50px;
