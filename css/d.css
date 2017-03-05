@@ -21,6 +21,7 @@ body{
     border: solid 2px;
     border-radius: 10px;
     position: relative;
+    box-shadow: 0.6vw 0.6vw 0.2vw #0F2202;
     margin-top: 2%;
     background: rgba(48,110,57,1);
     background: -moz-linear-gradient(-45deg, rgba(48,110,57,1) 0%, rgba(48,110,57,1) 31%, rgba(90,171,28,1) 100%);
@@ -63,7 +64,7 @@ body{
     vertical-align: middle;
     color: white;
     font-size: 3.5vw;
-    line-height: 300%;
+    line-height: 230%;
 }
 
 
@@ -76,7 +77,7 @@ body{
     text-align: center;
     width: 30%;
     line-height: 200%;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     left: 35%;
     border: solid 2px;
     border-radius: 5px;
@@ -96,14 +97,14 @@ body{
     width: calc(50% - 4px);
     text-align: center;
     border: solid 2px black;
-    font-size: 2.2vw;
-    line-height: 220%;
+    font-size: 1.65vw;
+    line-height: 200%;
     font-weight: bold;
     background: #53A11C;
 }
 
 .listIntro li:hover {
-    font-size: 2.4vw;
+    font-size: 1.85vw;
 }
 
 #historia{
@@ -123,7 +124,9 @@ body{
     display: block;
     margin: auto;
     margin-top: 2%;
+    margin-bottom: 2%;
     border: solid 2px black;;
+    box-shadow: 0.6vw 0.6vw 0.2vw #0F2202;
     border-radius: 10px;
     background: rgba(90,171,28,1);
     background: -moz-linear-gradient(-45deg, rgba(90,171,28,1) 0%, rgba(90,171,28,1) 14%, rgba(48,110,57,1) 86%, rgba(48,110,57,1) 100%);
@@ -136,20 +139,20 @@ body{
 }
 
 #intro h2{
-    font-size: 3vw;
+    font-size: 2vw;
     text-align: center;
 }
 
 #intro p{
     text-align: justify;
-    font-size: 1.9vw;
+    font-size: 1.4vw;
     line-height: 150%;
     padding: 2%;
 }
 
 #lNormas {
     display: none;
-    font-size: 2vw;
+    font-size: 1.5vw;
     line-height: 150%;
 }
 
@@ -160,10 +163,11 @@ body{
     display: block;
     margin: auto;
     padding: 1%;
-    padding-left: 3.5%;
-    line-height: 200%;
-    font-size: 2.5vw;
-    margin-top: 7.5%;
+    text-align: center;
+    line-height: 140%;
+    box-shadow: 0.6vw 0.6vw 0.2vw #214607;
+    font-size: 2vw;
+    margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 50px;
     border:solid 2px black;
@@ -189,6 +193,7 @@ form {
     margin-bottom: 3%;
     background: #75BA7C;
     border: solid 2px black;
+    box-shadow: 0.6vw 0.6vw 0.2vw #0F2202;
     border-radius: 10px;
     background: rgba(102,173,134,1);
     background: -moz-linear-gradient(left, rgba(102,173,134,1) 0%, rgba(102,173,134,1) 14%, rgba(141,211,175,1) 79%, rgba(141,211,175,1) 100%);
@@ -208,21 +213,26 @@ form {
 }
 
 h3 {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     line-height: 130%;
 }
 
 select {
-    font-size: 1.8vw;
+    font-size: 1.4vw;
+    font-family: 'Aldrich', sans-serif;
 }
+
 
 input[type=text]{
-    font-size: 1.6vw;
+    font-size: 1.5vw;
 }
 
-input[type=checkbox], input[type=radio]{
-    font-size: 2.4vw;
-    zoom: 1.5;
+input[type=checkbox], input[type=radio], label{
+    font-size: 1.5vw;
+}
+
+input[type=checkbox]:hover, input[type=radio]:hover, label:hover, select:hover, input[type=text]:hover{
+    zoom: 1.05;
 }
 
 #butCorregir, #butRegresar {
@@ -232,8 +242,8 @@ input[type=checkbox], input[type=radio]{
     margin: auto;
     margin-top: 5%;
     width: 70%;
-    font-size: 1.8vw;
-    line-height: 320%;
+    font-size: 1.5vw;
+    line-height: 280%;
     font-family: 'Aldrich', sans-serif;
     border:solid black;
     border-radius: 50px;
@@ -244,10 +254,6 @@ input[type=checkbox], input[type=radio]{
     display: none;
 }
 
-label {
-    font-size: 1.2vw;
-    zoom: 1.5;
-}
 
 #butCorregir:hover, #butRegresar:hover {
     transform: scale(1.04);
@@ -255,7 +261,6 @@ label {
 }
 
 #resultados {
-    font-size: 2vw;
     font-weight: bold;
     border: solid 2px;
     border-radius: 10px;
@@ -264,6 +269,7 @@ label {
     width: 80%;
     margin: auto;
     margin-bottom: 3%;
+    box-shadow: 0.6vw 0.6vw 0.2vw #0F2202;
     background: rgba(178,34,34,1);
     background: -moz-linear-gradient(left, rgba(178,34,34,1) 0%, rgba(178,34,34,1) 14%, rgba(237,73,73,1) 79%, rgba(237,73,73,1) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(178,34,34,1)), color-stop(14%, rgba(178,34,34,1)), color-stop(79%, rgba(237,73,73,1)), color-stop(100%, rgba(237,73,73,1)));
@@ -276,21 +282,21 @@ label {
 
 
 #resultados h2{
-    font-size: 2.6vw;
+    font-size: 2vw;
     text-align: center;
 }
 
 #resultados h4{
-    font-size: 2vw;
+    font-size: 1.7vw;
     text-decoration: underline;
 }
 
 #resultados h5{
-    font-size: 1.6vw;
+    font-size: 1.3vw;
     color:white;
 }
 
 #resultados p {
-    font-size: 1.6vw;
+    font-size: 1.3vw;
     color: #69ED78;
 }
