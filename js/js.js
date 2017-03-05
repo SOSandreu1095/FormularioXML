@@ -1,7 +1,7 @@
 //VARIABLES
 var formElement = null;
 var nota = 0.0;
-var maxTime = 1; //Segundos para hacer el test
+var maxTime = 180; //Segundos para hacer el test
 var time;
 var timer; //Timer para el intervalo
 
