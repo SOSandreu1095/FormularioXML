@@ -151,6 +151,13 @@ body{
     line-height: 230%;
 }
 
+.all {
+    margin-bottom: 1.5vw;
+    padding: 2%;
+    border: solid 1px black;
+    box-shadow: 1.2vw 1.2vw 0.6vw #888888;
+}
+
 #start {
     background: #D20808;
     color: white;
@@ -228,6 +235,7 @@ input[type=checkbox], input[type=radio]{
     font-family: 'Aldrich', sans-serif;
     border:solid black;
     border-radius: 50px;
+    box-shadow: 1vw 1vw 0.5vw #888888;
 }
 
 #butRegresar{

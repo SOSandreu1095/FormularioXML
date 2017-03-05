@@ -200,8 +200,15 @@ form {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ad86', endColorstr='#8dd3af', GradientType=1 );
 }
 
+.all {
+    margin-bottom: 1.5vw;
+    padding: 2%;
+    border: solid 1px black;
+    box-shadow: 10px 10px 5px #888888;
+}
+
 h3 {
-    font-size: 2.2vw;
+    font-size: 1.8vw;
     line-height: 130%;
 }
 
@@ -214,7 +221,7 @@ input[type=text]{
 }
 
 input[type=checkbox], input[type=radio]{
-    font-size: 2.8vw;
+    font-size: 2.4vw;
     zoom: 1.5;
 }
 
@@ -230,6 +237,7 @@ input[type=checkbox], input[type=radio]{
     font-family: 'Aldrich', sans-serif;
     border:solid black;
     border-radius: 50px;
+    box-shadow: 1vw 1vw 0.5vw #888888;
 }
 
 #butRegresar{
@@ -237,7 +245,7 @@ input[type=checkbox], input[type=radio]{
 }
 
 label {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     zoom: 1.5;
 }
 
