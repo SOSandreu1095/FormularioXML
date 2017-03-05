@@ -1,7 +1,8 @@
 //VARIABLES
 var formElement = null;
 var nota = 0.0;
-var time = 180; //Segundos para hacer el test
+var maxTime = 180; //Segundos para hacer el test
+var time;
 var timer; //Timer para el intervalo
 
 //2 Radio, 2 Text, 2 Checkbox, 2 Select, 2 Mulltiple
@@ -20,11 +21,10 @@ var answMult2 = [];
 
 
 window.onload = function () {
-
     formElement = document.getElementsByTagName("form")[0];
 
     //Cabecera
-    document.getElementById("historia").onclick = function(){
+    document.getElementById("historia").onclick = function () {
         document.getElementById("historia").style.background = "#D20808";
         document.getElementById("historia").style.color = "yellow";
         document.getElementById("normas").style.color = "white";
@@ -34,7 +34,7 @@ window.onload = function () {
         document.getElementById("tInt").innerHTML = "UOG - INTRODUCCIÓN"
     }
 
-    document.getElementById("normas").onclick = function(){
+    document.getElementById("normas").onclick = function () {
         document.getElementById("normas").style.background = "#D20808";
         document.getElementById("normas").style.color = "yellow";
         document.getElementById("historia").style.color = "white";
@@ -46,9 +46,9 @@ window.onload = function () {
 
     //Boton empezar
     document.getElementById("start").onclick = function () {
-        if(confirm("¿Estas seguro que deseas empezar el test? Recomendamos ver las normas")){
+        if (confirm("¿Estas seguro que deseas empezar el test? Recomendamos ver las normas")) {
             empezarTest();
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
         }
     }
 
@@ -80,7 +80,6 @@ window.onload = function () {
     };
     xhttp.open("GET", "https://rawgit.com/SOSandreu1095/FormularioXML/master/xml/preguntas.xml", true);
     xhttp.send();
-
 }
 
 
@@ -320,24 +319,50 @@ function ponerDatosMultiple(tituloMultiple, IDposicion, opciones, numSelect) {
 
 function corregir() {
     document.getElementById("resultados").style.display = "block";
-    addCorreccionHtml("RESULTADOS");
+    addCorreccionHtml("RESULTADOS", "h2");
+    document.getElementById("resultados").appendChild(document.createElement("hr"));
 
+    addCorreccionHtml("PREGUNTA 1", "h4");
     corregirRadio("radradioDiv1", answRadio1, 1);
+    addSolucionHtml(answRadio1);
+
+    addCorreccionHtml("PREGUNTA 2", "h4");
     corregirRadio("radradioDiv2", answRadio2, 2);
+    addSolucionHtml(answRadio2);
 
+    addCorreccionHtml("PREGUNTA 3", "h4");
     corregirText("text1", answText1, 3);
+    addSolucionHtml(answText1);
+
+    addCorreccionHtml("PREGUNTA 4", "h4");
     corregirText("text2", answText2, 4);
+    addSolucionHtml(answText2);
 
+    addCorreccionHtml("PREGUNTA 5", "h4");
     corregirCheckbox("checkcheckBoxDiv1", answCheck1, 5);
+    addSolucionHtml(answCheck1);
+
+    addCorreccionHtml("PREGUNTA 6", "h4");
     corregirCheckbox("checkcheckBoxDiv2", answCheck2, 6);
+    addSolucionHtml(answCheck2);
 
+    addCorreccionHtml("PREGUNTA 7", "h4");
     corregirSelect("sel1", answSelect1, 7);
+    addSolucionHtml(answSelect1);
+
+    addCorreccionHtml("PREGUNTA 8", "h4");
     corregirSelect("sel2", answSelect2, 8);
+    addSolucionHtml(answSelect2);
 
+    addCorreccionHtml("PREGUNTA 9", "h4");
     corregirMultiple("mult1", answMult1, 9);
-    corregirMultiple("mult2", answMult2, 10);
+    addSolucionHtml(answMult1);
 
-    window.scrollTo(0,document.body.scrollHeight);
+    addCorreccionHtml("PREGUNTA 10", "h4");
+    corregirMultiple("mult2", answMult2, 10);
+    addSolucionHtml(answMult2);
+
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 
@@ -359,10 +384,10 @@ function corregirRadio(divID, answer, numPregunta) {
         if (rad[i].checked) {
             fin = true;
             if (i == answer) {
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA!");
+                addCorreccionHtml(numPregunta + "." + (i) + " --> ¡CORRECTA!", "h5");
                 nota += 1;
             } else {
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡INCORRECTA!");
+                addCorreccionHtml(numPregunta + "." + (i) + " --> ¡INCORRECTA!", "h5");
             }
         }
     }
@@ -375,10 +400,10 @@ function corregirText(IDtext, answer, numPregunta) {
     s = s.toLowerCase();
 
     if (s == answer) {
-        addCorreccionHtml(numPregunta + " --> ¡CORRECTA!");
+        addCorreccionHtml(numPregunta + " --> ¡CORRECTA!", "h5");
         nota += 1;
     } else {
-        addCorreccionHtml(numPregunta + " --> ¡INCORRECTA!");
+        addCorreccionHtml(numPregunta + " --> ¡INCORRECTA!", "h5");
     }
 }
 
@@ -412,10 +437,10 @@ function corregirCheckbox(divID, answer, numPregunta) {
         if (chk[i].checked) {
             if (escorrecta[i]) {
                 nota += 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA!");
+                addCorreccionHtml(numPregunta + "." + (i) + " --> ¡CORRECTA!", "h5");
             } else {
                 nota -= 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡INCORRECTA!");
+                addCorreccionHtml(numPregunta + "." + (i) + " --> ¡INCORRECTA!", "h5");
             }
         }
     }
@@ -439,10 +464,10 @@ function corregirMultiple(IDmulti, answer, numPregunta) {
         if (mult[i].selected) {
             if (escorrecta[i]) {
                 nota += 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡CORRECTA!");
+                addCorreccionHtml(numPregunta + "." + (i) + " --> ¡CORRECTA!", "h5");
             } else {
                 nota -= 1.0 / answer.length;  //dividido por el número de respuestas correctas   
-                addCorreccionHtml(numPregunta + "." + (i + 1) + " --> ¡INCORRECTA!");
+                addCorreccionHtml(numPregunta + "." + (i) + " --> ¡INCORRECTA!", "h5");
             }
         }
     }
@@ -452,19 +477,26 @@ function corregirMultiple(IDmulti, answer, numPregunta) {
 function corregirSelect(IDselect, answer, numPregunta) {
     var sel = document.getElementById(IDselect);
     if (sel.selectedIndex - 1 == answer) {
-        addCorreccionHtml(numPregunta + " --> ¡CORRECTA!");
+        addCorreccionHtml(numPregunta + "." + (sel.selectedIndex - 1) + " --> ¡CORRECTA!", "h5");
         nota += 1;
     } else {
-        addCorreccionHtml(numPregunta + " --> ¡INCORRECTA!");
+        addCorreccionHtml(numPregunta + "." + (sel.selectedIndex - 1) + " --> ¡INCORRECTA!", "h5");
     }
 }
 
 
-function addCorreccionHtml(s) {
-    var p = document.createElement("p");
+function addCorreccionHtml(s, tipoH) {
+    var h = document.createElement(tipoH);
     var node = document.createTextNode(s);
-    p.appendChild(node);
+    h.appendChild(node);
+    document.getElementById("resultados").appendChild(h);
+}
+
+function addSolucionHtml(s) {
+    var p = document.createElement("p");
+    p.innerHTML = ("SOLUCIÓN: " + s);
     document.getElementById("resultados").appendChild(p);
+    document.getElementById("resultados").appendChild(document.createElement("hr"));
 }
 
 
@@ -472,7 +504,7 @@ function addCorreccionHtml(s) {
 
 function presentarNota() {
     nota = nota.toFixed(2);
-    addCorreccionHtml("Nota: " + nota + " puntos sobre 10");
+    addCorreccionHtml("Nota: " + nota + " puntos sobre 10", "h2");
     if (nota >= 5) {
         alert("¡ENHORABUENA! HAS APROBADO CON UN " + nota);
     } else {
@@ -586,11 +618,12 @@ function comprobarContestadas() {
 
 function empezarTest() {
     formElement.reset();
-    time = 180;
+    time = maxTime;
     timer = setInterval(actualizarTemp, 1000);
     document.getElementById("timer").style.display = "block";
     document.getElementById("intro").style.display = "none";
     document.getElementById("quest").style.display = "block";
+    visualizarCorregir();
 }
 
 function actualizarTemp() {
@@ -598,7 +631,7 @@ function actualizarTemp() {
     t = document.getElementById("timer");
 
     if (time >= 0) {
-        if (time < 30){
+        if (time < 30) {
             //Rojo
             t.style.background = "#F21C1C";
         } else {
@@ -606,7 +639,7 @@ function actualizarTemp() {
                 t.style.background = "#D28808";
             } else {
                 if (time < 120) {
-                t.style.background = "#A0D208";
+                    t.style.background = "#A0D208";
                 } else {
                     t.style.background = "#54AE06";
                 }
@@ -623,12 +656,17 @@ function actualizarTemp() {
     }
 }
 
-function ocultarCorregir(){
+function ocultarCorregir() {
     document.getElementById("butCorregir").style.display = "none";
     document.getElementById("butRegresar").style.display = "block";
 }
 
-function regresarMenu(){
+function visualizarCorregir() {
+    document.getElementById("butCorregir").style.display = "block";
+    document.getElementById("butRegresar").style.display = "none";    
+}
+
+function regresarMenu() {
     document.getElementById("intro").style.display = "block";
     document.getElementById("quest").style.display = "none";
     document.getElementById("resultados").style.display = "none";

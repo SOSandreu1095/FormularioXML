@@ -260,3 +260,23 @@ label {
     background: linear-gradient(to right, rgba(178,34,34,1) 0%, rgba(178,34,34,1) 14%, rgba(237,73,73,1) 79%, rgba(237,73,73,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b22222', endColorstr='#ed4949', GradientType=1 );
 }
+
+#resultados h2{
+    font-size: 3.3vw;
+    text-align: center;
+}
+
+#resultados h4{
+    font-size: 3vw;
+    text-decoration: underline;
+}
+
+#resultados h5{
+    font-size: 2.3vw;
+    color:white;
+}
+
+#resultados p {
+    font-size: 2.4vw;
+    color: #69ED78;
+}
