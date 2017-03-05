@@ -84,8 +84,7 @@ En este caso son pequeñas cosas y funciones que he creado para evitar errores y
   * Una vez realizado el test y mostrada la corrección el test, desaparece el botón de corregir y sale un nuevo botón para volver a la pantalla principal
 
 * RESET DEL FORMULARIO
-  * Si ya se ha realizado el test, se ha vuelto a la pantalla principal y se desea volver a hacer, es necesario hacer un reset de lo que el usuario ya hubiese marcado anteriormente
-  * También una reset del  tiempo
-/
+  * Si ya se ha realizado el test, se ha vuelto a la pantalla principal y se desea volver a hacer, es necesario hacer un reset de lo que el usuario ya hubiese marcado anteriormente, para que al iniciar el test otra vez no le salgan las respuestas marcadas anteriormente
+  * También una reset del tiempo anterior a unos nuevos 180 segundos
 
 **Este documento, y el proyecto, es susceptible de sufrir modificaciones sin previo aviso**
