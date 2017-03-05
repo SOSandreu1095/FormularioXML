@@ -198,16 +198,16 @@ form {
 }
 
 h3 {
-    font-size: 2.6vw;
-    line-height: 150%;
+    font-size: 2.7vw;
+    line-height: 330%;
 }
 
 select {
-    font-size: 2.4vw;
+    font-size: 2.5vw;
 }
 
 input[type=text]{
-    font-size: 1.9vw;
+    font-size: 2vw;
 }
 
 input[type=checkbox], input[type=radio]{
@@ -234,7 +234,7 @@ input[type=checkbox], input[type=radio]{
 }
 
 label {
-    font-size: 1.5vw;
+    font-size: 1.6vw;
     zoom: 1.5;
 }
 
