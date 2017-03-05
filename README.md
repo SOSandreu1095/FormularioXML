@@ -64,6 +64,9 @@ Funcionalidades adicionales principales
 * ASEGURARSE DE QUE TODAS LAS RESPUESTAS ESTEN CONTESTADAS: Al pulsar en el botón de corregir
   * En caso de que falte alguna pregunta por contestar se avisará al usuario
   * La página hará focus al elemente que falta por contestar para simplificarle la vida al usuario y ahorrarle tiempo del test
+  
+* MUESTRA DE LAS SOLUCIONES
+ * Al corregir no solo se muesta si es correcta o incorrecta la pregunta, también se muestra las soluciones de cada pregunta para que el usuario pueda comprobar sus respuestas más fácilmente
 
 Funcionalidades adicionales secundarias
 ---------------------------------------
