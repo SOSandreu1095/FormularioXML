@@ -477,10 +477,10 @@ function corregirMultiple(IDmulti, answer, numPregunta) {
 function corregirSelect(IDselect, answer, numPregunta) {
     var sel = document.getElementById(IDselect);
     if (sel.selectedIndex - 1 == answer) {
-        addCorreccionHtml(numPregunta + "." + (sel.selectedIndex) + " --> ¡CORRECTA!", "h5");
+        addCorreccionHtml(numPregunta + "." + (sel.selectedIndex-1) + " --> ¡CORRECTA!", "h5");
         nota += 1;
     } else {
-        addCorreccionHtml(numPregunta + "." + (sel.selectedIndex) + " --> ¡INCORRECTA!", "h5");
+        addCorreccionHtml(numPregunta + "." + (sel.selectedIndex-1) + " --> ¡INCORRECTA!", "h5");
     }
 }
 
