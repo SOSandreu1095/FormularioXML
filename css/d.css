@@ -220,19 +220,35 @@ h3 {
 select {
     font-size: 1.4vw;
     font-family: 'Aldrich', sans-serif;
+    color: #1E4D5B;
 }
 
 
 input[type=text]{
     font-size: 1.5vw;
+    color: #1E4D5B;
 }
 
 input[type=checkbox], input[type=radio], label{
     font-size: 1.5vw;
+    color: #1E4D5B;
 }
 
-input[type=checkbox]:hover, input[type=radio]:hover, label:hover, select:hover, input[type=text]:hover{
+input[type=checkbox]:hover, input[type=radio]:hover, label:hover{
     zoom: 1.05;
+    color: black;
+}
+
+select:hover {
+    zoom: 1.025;
+    border: 0.26vw solid #888888;
+    color: black;
+}
+
+input[type=text]:hover {
+    transform: scale(1.015);
+    border: 0.26vw solid #888888;
+    color: black;
 }
 
 #butCorregir, #butRegresar {
