@@ -1,5 +1,11 @@
 # FORMULARIO XML (Andreu Juan Ferrá)
 
+A MEJORAR
+---------
+* Historia y Normas no debe modificar despazar todo el div, mejor hacer un zoom o algo similar que no desplace todo
+* Mejor mostrar el texto de las soluciones en vez de el número de la solución correcta
+* En js cuando se cambian los colores de la intro y las normas dependiendo del seleccionado, mejor cargarle un css desde el javascript: http://stackoverflow.com/questions/574944/how-to-load-up-css-files-using-javascript
+
 INTRODUCCIÓN
 ------------
 En este proyecto nos basamos en coger la información almacenada en un fichero XML y visualizarla. En este caso en fichero .xml es un cuestionario. 
