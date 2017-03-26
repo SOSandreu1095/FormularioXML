@@ -4,15 +4,15 @@
 <xsl:template match="/">
 <html>
  <body>
-  <h2>Questions</h2>
+  <h2>Questions UOG</h2>
   <table border="1">
-   <tr bgcolor="#cdd8f6">
+   <tr bgcolor="#8EA1ED">
     <th>Title</th>
     <th>Option</th>
     <th>Answer</th>
    </tr>
    <xsl:for-each select="questions/question">
-   <tr>
+   <tr bgcolor="D0D9F2">
     <td><xsl:value-of select="title"/></td>
    <td>
     <xsl:for-each select="option">
@@ -30,5 +30,4 @@
  </body>
 </html>
 </xsl:template>
-
 </xsl:stylesheet>
