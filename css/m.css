@@ -99,11 +99,14 @@ body{
     border: solid 2px black;
     font-size: 2.4vw;
     line-height: 230%;
+    padding-top: 2px;
+    padding-bottom: 2px;
     font-weight: bold;
 }
 
 .listIntro li:hover {
-    font-size: 2.6vw;
+    padding: 0px;
+    font-size: calc(2.4vw + 2px);
 }
 
 #historia{
@@ -151,7 +154,7 @@ body{
 #lNormas {
     display: none;
     font-size: 2.6vw;
-    line-height: 165%;
+    line-height: 180%;
     padding-right: 2vw;
 }
 

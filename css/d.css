@@ -100,11 +100,14 @@ body{
     font-size: 1.65vw;
     line-height: 200%;
     font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
     background: #53A11C;
 }
 
 .listIntro li:hover {
-    font-size: 1.85vw;
+    padding: 0px;
+    font-size: calc(1.65vw + 2px);
 }
 
 #historia{
@@ -153,7 +156,7 @@ body{
 #lNormas {
     display: none;
     font-size: 1.5vw;
-    line-height: 150%;
+    line-height: 180%;
 }
 
 #start {
@@ -229,28 +232,32 @@ input[type=text]{
     color: #1E4D5B;
 }
 
+input[type=text]:hover{
+    background: #D7EDFA;
+    color: #1E4D5B;
+}
+
+
 input[type=text], select {
     width: 50%;
 }
 
 input[type=checkbox], input[type=radio], label{
     font-size: 1.5vw;
+    line-height: 103%;
     color: #1E4D5B;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 input[type=checkbox]:hover, input[type=radio]:hover, label:hover{
-    zoom: 1.05;
+    line-height: 100%;
+    font-size: calc(1.5vw + 3%);
     color: black;
 }
 
 select:hover {
     zoom: 1.025;
-    border: 0.26vw solid #888888;
-    color: black;
-}
-
-input[type=text]:hover {
-    transform: scale(1.015);
     border: 0.26vw solid #888888;
     color: black;
 }
