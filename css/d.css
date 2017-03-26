@@ -242,6 +242,17 @@ input[type=text], select {
     width: 50%;
 }
 
+select {
+    font-size: 1.5vw;
+    color: #1E4D5B;
+    margin: 0.2vw;
+}
+
+select:hover {
+    font-size: 1.5vw;
+    color: black;
+}
+
 input[type=checkbox], input[type=radio], label{
     font-size: 1.5vw;
     line-height: 103%;
@@ -256,11 +267,6 @@ input[type=checkbox]:hover, input[type=radio]:hover, label:hover{
     color: black;
 }
 
-select:hover {
-    zoom: 1.025;
-    border: 0.26vw solid #888888;
-    color: black;
-}
 
 #butCorregir, #butRegresar {
     display: block;

@@ -1,11 +1,10 @@
 # FORMULARIO XML (Andreu Juan Ferrá)
 
-MEJORADO DE LA ANTERIOR ENTREGA
--------------------------------
-* Ya no hay vibraciones de pantalla al agrandar fuentes en los hover, juego con los margin / padding y los size para ampliar las fuentes sin despazar toda la página
-* Los select, y los input text tienen el mismo ancho horizontal en todos los casos
-* TODAVIA NO Mejor mostrar el texto de las soluciones en vez de el número de la solución correcta
-* TODAVIA NO En js cuando se cambian los colores de la intro y las normas dependiendo del seleccionado, mejor cargarle un css desde el javascript: http://stackoverflow.com/questions/574944/how-to-load-up-css-files-using-javascript
+A MEJORAR
+---------
+* Historia y Normas no debe modificar despazar todo el div, mejor hacer un zoom o algo similar que no desplace todo
+* Mejor mostrar el texto de las soluciones en vez de el número de la solución correcta
+* En js cuando se cambian los colores de la intro y las normas dependiendo del seleccionado, mejor cargarle un css desde el javascript: http://stackoverflow.com/questions/574944/how-to-load-up-css-files-using-javascript
 
 INTRODUCCIÓN
 ------------
