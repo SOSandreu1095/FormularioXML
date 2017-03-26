@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Preguntas sobre videojuegos -->
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
 
 <!DOCTYPE questions SYSTEM "questions.dtd">
 

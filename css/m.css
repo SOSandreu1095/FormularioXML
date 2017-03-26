@@ -224,6 +224,10 @@ input[type=text]{
     font-size: 2vw;
 }
 
+input[type=text], select {
+    width: 50%;
+}
+
 input[type=checkbox], input[type=radio]{
     font-size: 3vw;
     zoom: 1.4;
